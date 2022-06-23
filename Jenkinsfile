@@ -9,12 +9,6 @@ pipeline {
 
   stages {
 
-    stage('Checkout Source') {
-      steps {
-        git 'https://github.com/rajiyyah/K8-Jenkins.git'
-      }
-    }
-
     stage('Build image') {
       steps{
         script {
