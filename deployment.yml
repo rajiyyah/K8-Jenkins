@@ -19,17 +19,16 @@ spec:
         image: rajiyyah/nodeapp:latest
         ports:
         - containerPort: 3000
-      readinessProbe:
-      - initialDelaySeconds: 1
-        periodSeconds: 2
-        timeoutSeconds: 1
-        successThreshold: 1
-        failureThreshold: 1
-        httpGet:
-          host:
-          scheme: HTTP
-          path: /ready
-          httpHeaders:
-            name: Host
-            value: nodejsapp.com
+        readinessProbe:
+          initialDelaySeconds: 1
+          periodSeconds: 2
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 1
+          httpGet:
+            scheme: HTTP
+            path: /ready
+            httpHeaders:
+            - name: Host
+              value: nodejsapp.com
             port: 3000
